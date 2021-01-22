@@ -1,0 +1,3 @@
+BaggingClassifier_ Score
+
+0.9277777777777778
