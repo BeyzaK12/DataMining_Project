@@ -1,25 +1,18 @@
-from datetime import datetime
 import os
-import numpy as np
-
-from sklearn.datasets import load_digits
-from sklearn.model_selection import train_test_split
-
-from skimage import io
-from skimage.transform import resize
-from skimage.color import rgb2gray
-from matplotlib import pyplot as plt
-from PIL import Image
-
-from sklearn.svm import SVC
-from sklearn.linear_model import LogisticRegression, SGDClassifier
-from sklearn.neural_network import MLPClassifier
-from sklearn.ensemble import VotingClassifier, BaggingClassifier
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
-
 # Ignore warnings
 import warnings
+from datetime import datetime
+
+import numpy as np
+from skimage import io
+from skimage.color import rgb2gray
+from skimage.transform import resize
+from sklearn.ensemble import VotingClassifier, BaggingClassifier
+from sklearn.linear_model import LogisticRegression, SGDClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.neural_network import MLPClassifier
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
 
 warnings.filterwarnings('ignore')
 
@@ -234,7 +227,7 @@ def run_all(log=True, sgd=True, mlp=True, voting=True, bagging=True, opt_write_f
         current_time = datetime.now().strftime("%H:%M:%S")
         print(current_time, "| LogisticRegression_ DONE\n")
         
-	# write results to file
+        # write results to file
         if opt_write_file:
             with open("Logistic_Score_{}_{}.txt".format(resize_, limit), "w") as txt_file_:
                 txt_file_.write("LogisticRegression_ Score" + "\n\n" + str(Log_score))
@@ -251,7 +244,7 @@ def run_all(log=True, sgd=True, mlp=True, voting=True, bagging=True, opt_write_f
         current_time = datetime.now().strftime("%H:%M:%S")
         print(current_time, "| SGDClassifier_ DONE\n")
         
-	# write results to file
+        # write results to file
         if opt_write_file:
             with open("SGD_Score_{}_{}.txt".format(resize_, limit), "w") as txt_file_:
                 txt_file_.write("SGDClassifier_ Score" + "\n\n" + str(SGD_score))
@@ -268,7 +261,7 @@ def run_all(log=True, sgd=True, mlp=True, voting=True, bagging=True, opt_write_f
         current_time = datetime.now().strftime("%H:%M:%S")
         print(current_time, "| MLPClassifier_ DONE\n")
         
-	# write results to file
+        # write results to file
         if opt_write_file:
             write_file("MLP_Scores_{}_{}".format(resize_, limit), MLP_scores)
     
@@ -284,7 +277,7 @@ def run_all(log=True, sgd=True, mlp=True, voting=True, bagging=True, opt_write_f
             current_time = datetime.now().strftime("%H:%M:%S")
             print(current_time, "| VotingClassifier_ DONE\n")
             
-	    # write results to file
+            # write results to file
             if opt_write_file:
                 with open("Voting_Score_{}_{}.txt".format(resize_, limit), "w") as txt_file_:
                     txt_file_.write("VotingClassifier_ Score" + "\n\n" + str(Voting_score))
@@ -301,7 +294,7 @@ def run_all(log=True, sgd=True, mlp=True, voting=True, bagging=True, opt_write_f
         current_time = datetime.now().strftime("%H:%M:%S")
         print(current_time, "| BaggingClassifier_ DONE\n")
         
-	# write results to file
+        # write results to file
         if opt_write_file:
             with open("Bagging_Score_{}_{}.txt".format(resize_, limit), "w") as txt_file_:
                 txt_file_.write("BaggingClassifier_ Score" + "\n\n" + str(Bag_score))
@@ -316,8 +309,8 @@ def run_all(log=True, sgd=True, mlp=True, voting=True, bagging=True, opt_write_f
 
 
 folder_path = "tr_signLanguage_dataset"
-resize_ = 80    # img.shape(80,80)
-limit = 500     # -1 for no limit
+resize_ = 8    # img.shape(80,80)
+limit = 5     # -1 for no limit
 
 X, y = create_data(folder_path, resize_, limit)     # (11500, 6400)
 # X, y = load_digits(return_X_y=True)     # (1257, 64)

@@ -3,18 +3,13 @@ import os
 import numpy as np
 from matplotlib import pyplot as plt
 from skimage import io
-from skimage import segmentation, color
 from skimage.color import rgb2gray
 from skimage.filters import threshold_otsu
-from skimage.future import graph
 from skimage.metrics import mean_squared_error
 from skimage.metrics import structural_similarity as ssim
-from skimage.transform import resize
-from skimage import data, img_as_float
 from skimage.segmentation import (morphological_chan_vese,
-                                  morphological_geodesic_active_contour,
-                                  inverse_gaussian_gradient,
                                   checkerboard_level_set)
+from skimage.transform import resize
 
 
 def load_paths(folder_path_):
