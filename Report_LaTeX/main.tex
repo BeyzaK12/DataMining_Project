@@ -108,7 +108,7 @@ Figure~\ref{fig:tr_sign_language} below shows the sign language representation o
 Although I use images as data, instead of using libraries like keras that come to mind when it comes to "image classification", I wanted to put forward a study by sticking to the sklearn library we use in our homework. Because the digit data set we used during our homework was also a visual data set. I aimed to measure Sklearn's performance on another visual dataset.
 
 \subsection{Data Preprocessing}
-Because the images were colorful, they can be 3-dimensional arrays. This was not a suitable form to fit into classification models. Therefore, the rgb2gray function of skimage.color has been applied to all images. So they are grayscale and 2-dimensional now.
+Because the images were colorful, they can be 3-dimensional arrays. This was not a suitable form to fit into classification models. Therefore, the rgb2gray function of skimage.color has been applied to all images. So they are grayscale and 2-dimensional now. Using skimage.transform(), the dimensions were changed from 224x224 to 80x80.
 
 \vspace{2mm}
 The states of an image whose original is not square, before and after the transformations are applied can be seen in Figure~\ref{fig:transformed_A}:
