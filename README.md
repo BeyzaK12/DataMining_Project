@@ -1,4 +1,4 @@
-# 160709017 Beyza Kurt |Data Mining Final Project
+# 160709017 Beyza Kurt | Data Mining Final Project
 
 Description:
   The data set is taken from https://www.kaggle.com/berkaykocaoglu/tr-sign-language:
